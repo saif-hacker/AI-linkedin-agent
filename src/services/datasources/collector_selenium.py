@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-# from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -48,11 +48,11 @@ def collect_profiles(driver, limit=50):
 
 
 def collect_from_selenium(limit=50, out_path="data/profiles.jsonl"):
-    # options = Options()
-    # options.add_argument("--start-maximized")
-    # CHROMEDRIVER_PATH = r"C:\Users\user\Desktop\Linkedin automation agent\ai-linkedin-agent\src\services\datasources\chrome-win64\chrome.exe"
-    # service = Service(CHROMEDRIVER_PATH)
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--start-maximized")
+    CHROMEDRIVER_PATH = r"C:\Users\user\Desktop\Linkedin automation agent\ai-linkedin-agent\src\services\datasources\chrome-win64\chrome.exe"
+    service = Service(CHROMEDRIVER_PATH)
+    driver = webdriver.Chrome(service=service, options=options)
 
     try:
         linkedin_login(driver)

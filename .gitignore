@@ -20,3 +20,10 @@ Thumbs.db
 
 # Environment variables
 .env
+
+#chrome webdriver files
+# Selenium / Chrome
+*.exe
+*.dll
+*.so
+*.dylib

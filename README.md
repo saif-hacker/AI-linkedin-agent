@@ -24,6 +24,8 @@ cp .env.example .env
 # Run end-to-end in "human-approval" mode (you approve before sending)
 python src/main.py run --source=csv --approve
 ```
+# Run Automatic fetching using Selenium__  # Not recommended due to Linkedin TOS
+python src/main.py run --source=selenium --approve
 
 ### Modes
 - `collect` — fetch new connections
